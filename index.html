@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="logoContainer">
+                    <p class="logo">Mi Tienda</p>
+                </div>
+                <div class="optionsContainer">
+                    <button class="menuB mobile" id="trigger" type="button">
+                        <i id="menuOpen" class="fa fa-bars active" aria-hidden="true"></i>
+                    </button>                      
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle-o account" aria-hidden="true"></i>             
+                </div>
+            </div>
+       </div>
+        <div class="row">  
+            <nav id="menu">
+                <ul>
+                    <div class="container">                     
+                       <li>Electrónicos</li>
+                       <li>Juguetes</li>
+                       <li>Comics</li>
+                       <li>Coleccionables</li>
+                       <li>Playeras</li>
+                    </div>
+                </ul>
+            </nav>
+        </div>       
+   </header>
+    <section class="checkoutWrap">
+       <div class="container">
+            <h1>Finaliza tu compra</h1>
+            <p>¡Completa todos los campos para poder finalizar tu compra!</p>
+            <div class="row">
+                <div class="col3 first">
+                   <div class="formWrap">
+                       <h2>1. Regístrate</h2>
+                       <div class="infoContainer">
+                            <ul class="userInfo">
+                                <li>
+                                    <h3>Usuario</h3>
+                                    <p>Empresa X Y Z</p>
+                                </li>
+                                <li>
+                                    <h3>Dirección de Envío</h3>
+                                    <p>Calle Río Lerma 4, Piso 6, Colonia Cuauhtémoc, CP 53000, Ciudad de México</p>
+                                </li> 
+                                <li>
+                                    <h3>Teléfono</h3>
+                                    <p>(044)-55-3367-8909</p>
+                                </li>                                                                 
+                            </ul>
+                       </div>
+                   </div>
+                </div>
+                <div class="col3 second">
+                    <div class="formWrap deliverWrap">
+                       <h2>2. Forma de Pago</h2>
+                       <div class="infoContainer first">
+                           <ul>
+                               <li>
+                                   <label><input type="radio" id="cardInput" value="first_checkbox"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Tarjeta de Crédito/Débito</label>
+                                    <form name="formulario" method="get" onSubmit="return Validar(this)" class="cardForm" id="cardForm">  
+                                        <div class="inputWrap">
+                                            <label for="name">Tipo de Tarjeta</label>
+                                            <select id="cardType" class="cardType" name="cardType">
+                                                <option value=''>Seleccione</option>
+                                                <option>Mastercard</option>
+                                                <option>Visa</option>
+                                                <option>American Express</option>
+			                                </select>
+                                        </div>
+                                        <div class="inputWrap">
+                                            <label for="name">Número de tarjeta</label>
+                                            <input id="cardNumber" type="number" name="name">
+                                        </div>
+                                        <div class="inputWrap">
+                                            <label for="name">Nombre de la tarjeta</label>
+                                            <input id="cardName" type="text" name="name">
+                                        </div>
+                                        <div class="inputWrap">
+                                            <label>Fecha de expiración</label>
+                                            <div class="col2">
+                                                  <label for='mes'>Mes</label>
+                                                <select id='mes' name='mes'>
+                                                    <option value=''>Seleccione</option>
+                                                    <option>01 - Enero</option>
+                                                    <option>02 - Febrero</option>
+                                                    <option>03 - Marzo</option>
+                                                    <option>04 - Abril</option>
+                                                    <option>05 - Mayo</option>
+                                                    <option>06 - Junio</option>
+                                                    <option>07 - Julio</option>
+                                                    <option>08 - Agosto</option>
+                                                    <option>09 - Septiembre</option>
+                                                    <option>10 - Octubre</option>
+                                                    <option>11 - Noviembre</option>
+                                                    <option>12 - Diciembre</option>
+                                                </select>                                                
+                                            </div>
+                                            <div class="col2">
+                                                <label for='año'>Años</label>
+                                                <select id='año' name='año'>
+                                                    <option value=''>Seleccione</option>
+                                                    <option>2017</option>
+                                                    <option>2018</option>
+                                                    <option>2019</option>
+                                                    <option>2020</option>
+                                                    <option>2021</option>
+                                                </select>                                             
+                                            </div>
+                                        </div>
+                                        <div class="inputWrap">
+                                            <label for="number">Codigo de seguridad</label>
+                                            <input id="cardSecurity" type="password" name="number" maxlength="3">
+                                        </div> 
+<!--                                        <input type="submit" value="Enviar" id="Enviar">                                                                                                                   -->
+                                    </form>
+                               </li>
+                               <li>
+                                   <label><input type="radio" id="paypalInput" value="first_checkbox"><i class="fa fa-cc-paypal" aria-hidden="true"></i> PayPal</label>
+                               </li>                                  
+                               <li>
+                                   <label><input type="radio" id="efectivoInput" value="first_checkbox"><i class="fa fa-handshake-o" aria-hidden="true"></i> Efectivo</label>
+                               </li>                              
+                           </ul>
+                        </div>
+                        <div class="infoContainer last">
+                            <p>Fecha de entrega <strong>15 agosto 2017</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3 last">
+                     <div class="formWrap orderWrap">
+                        <h2>3. Resumen de Pedido</h2>
+                        <div class="infoContainer first">
+                           <div class="item">
+                               <div class="itemWrap first">
+                                    <p class="name">ASUS ZenPad Z300M-A2-GR 16GB Negro, Gris - Tablet</p>
+                                    <p class="price"> $6,760<sup>.95</sup></p>
+                                    <p class="qty">x 2</p>
+                               </div>
+                                <div class="itemWrap last">
+                                    <img src="https://dlcdnimgs.asus.com/websites/global/products/Z6Wda6yI8WpA2D69/imgs/580kv.png" alt="ASUS">
+                               </div>
+                           </div>
+                           <div class="item">
+                               <div class="itemWrap first">
+                                    <p class="name">Lenovo TAB3 Essential - ZA0R0029US 7" Android Tablet</p>
+                                    <p class="price"> $1,495<sup>.31</sup></p>
+                                    <p class="qty">x 1</p>
+                               </div>
+                                <div class="itemWrap last">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/5134GyDMNgL.jpg" alt="Lenovo">
+                               </div>
+                           </div>
+                           <div class="item last">
+                               <div class="itemWrap first">
+                                    <p class="name">Star Wars Figuras de Acción Star Wars Black Series, AT-AT Driver, 6"</p>
+                                    <p class="price"> $449<sup>.00</sup></p>
+                                    <p class="qty">x 1</p>
+                               </div>
+                                <div class="itemWrap last">
+                                    <img src="https://s-media-cache-ak0.pinimg.com/736x/40/69/e0/4069e0fe2231ead3918a20cb275fb546--star-wars-collectibles-starwars-toys.jpg" alt="StarWars">
+                               </div>
+                           </div>                                                     
+                        </div>
+                        <div class="total">
+                            <p class="first">Subtotal: <strong>$100.<sup>00</sup></strong></p>
+                            <p class="last">Total: <strong>$140.<sup>00</sup></strong></p>
+                        </div>
+                    </div>
+                    <label  id="terminos"><input type="checkbox" value="first_checkbox">He leído y acepto los <a href="#">términos y condiciones</a>.</label>
+                    <button class="" id="checkoutSubmit" class="checkoutSubmit" type="submit">Realizar Pedido</button>              
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="col2">
+                <p class="logo">Mi Tienda</p>
+                 <p>&copy;2017. Todos los derechos reservados.</p>
+            </div>
+            <div class="col2">
+                <ul class="socialIcons">
+                    <li><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>  
+</body>
+</html>
