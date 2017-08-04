@@ -19,12 +19,12 @@ function Validar(formulario){
     
     var todo_correcto = true;
     
-    var cardType = $('#cardType');
-    var cardNumber = $('#cardNumber');
-    var cardName = $('#cardName');
-    var cardMonth = $('#cardDate-month');
-    var cardYear = $('#cardDate-year');
-    var cardCvv = $('#cardSecurity');
+    cardType = document.getElementById('cardType');
+    cardNumber = document.getElementById('cardNumber');
+    cardName = document.getElementById('cardName');
+    cardMonth = document.getElementById('cardDate-month');
+    cardYear = document.getElementById('cardDate-year');
+    cardCvv = document.getElementById('cardSecurity');
     
     if(cardType == null || cardType == 0 ){
         alert("No haz seleccionado un tipo de tarjeta");
@@ -46,19 +46,19 @@ function Validar(formulario){
          todo_correcto = false;
     };
 
-    if(cardMonth == null || cardType == 0 ){
+    if(cardMonth == null || cardMonth == 0 ){
         alert("No haz seleccionado el mes");
         user.focus();
         todo_correcto = false;
     };    
     
-    if(cardYear == null || cardType == 0 ){
+    if(cardYear == null || cardYear == 0 ){
         alert("No haz seleccionado el año");
         user.focus();
         todo_correcto = false;
     };
     
-    if(cardCvv == null || cardType == 0 ){
+    if(cardCvv == null || cardCvv == 0 ){
         alert("No haz ingresado tu CVV");
         user.focus();
         todo_correcto = false;
