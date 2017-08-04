@@ -41,6 +41,12 @@ function Validar(formulario){
          todo_correcto = false;
     };
     
+    if(cardNumber.lenght < 16 || cardNumber.lenght > 16)
+    {
+         alert("La tarjeta debe contener 16 dígitos");
+         todo_correcto = false;
+    };
+    
     if(cardName == "")
     {
          alert("No haz ingresado un Nombre para la tarjeta");
