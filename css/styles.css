@@ -195,6 +195,7 @@ header .menuB{
     float: left;
     width: 100%;
     clear: both;
+    margin: 5px 0;
 }
 
 .checkoutWrap .formWrap .infoContainer .inputWrap.tittle{
@@ -229,7 +230,7 @@ header .menuB{
 }
 
 .deliverWrap .cardForm{
-    display: block;
+    display: none;
     float: left;
     width: 100%;
     padding: 10px;
@@ -369,6 +370,15 @@ footer .socialIcons li{
 
 footer .socialIcons li i{
     font-size: 2em;
+}
+
+#cardType{
+    position: relative;
+}
+
+.validation{
+    display: none;
+    color: orangered;
 }
 
 @media screen and (max-width: 1200px) {

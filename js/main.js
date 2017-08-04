@@ -19,54 +19,67 @@ function Validar(formulario){
     
     var todo_correcto = true;
     
-    cardType = document.getElementById('cardType');
-    cardNumber = document.getElementById('cardNumber');
-    cardName = document.getElementById('cardName');
-    cardMonth = document.getElementById('cardDate-month');
-    cardYear = document.getElementById('cardDate-year');
-    cardCvv = document.getElementById('cardSecurity');
+    var cardType, cardNumber, cardName,  cardMonth, cardYear, cardCvv;
+    
+    cardType = document.getElementById('cardType').value;
+    cardNumber = document.getElementById('cardNumber').value;
+    cardName = document.getElementById('cardName').value;
+    cardMonth = document.getElementById('cardDate-month').value;
+    cardYear = document.getElementById('cardDate-year').value;
+    cardCvv = document.getElementById('cardSecurity').value;
     
     if(cardType == null || cardType == 0 ){
         alert("No haz seleccionado un tipo de tarjeta");
-        user.focus();
+        cardType.focus();
+        cardType.className = "show";
         todo_correcto = false;
     };
     
-   if(cardNumber.value=="")
+   if(cardNumber == "")
     {
          alert("No haz ingresado un número de tarjeta");
-         user.focus();
          todo_correcto = false;
     };
     
-    if(cardName.value=="")
+    if(cardName == "")
     {
          alert("No haz ingresado un Nombre para la tarjeta");
-         user.focus();
          todo_correcto = false;
     };
 
     if(cardMonth == null || cardMonth == 0 ){
         alert("No haz seleccionado el mes");
-        user.focus();
         todo_correcto = false;
     };    
     
     if(cardYear == null || cardYear == 0 ){
         alert("No haz seleccionado el año");
-        user.focus();
         todo_correcto = false;
     };
     
     if(cardCvv == null || cardCvv == 0 ){
         alert("No haz ingresado tu CVV");
-        user.focus();
         todo_correcto = false;
     };    
 
     return todo_correcto;
 };
+
+
+function tarjeta(){
+ 
+    var cardType;
+    cardType = document.getElementById('cardSecurity');
     
-$( "#checkoutSubmit" ).click(function () {
-   Validar($("#cardForm"));
+    if(cardType.checked = true){
+        console.log("prueba");
+       $( "#checkoutSubmit" ).click(function () {
+           Validar($("#cardForm"));
+        });
+    };    
+    
+};
+
+$( document ).ready(function() {
+    tarjeta();
 });
